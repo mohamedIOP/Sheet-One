@@ -10,7 +10,7 @@ int main(){
         cin >> arrayOfNumbers[i];
     }
     // initializing minimum and maximum value with the first element in the array
-    int minimum = arrayOfNumbers[0], maximum = arrayOfNumbers[0];
+    int minimum = arrayOfNumbers[0],minimumIndex = 0, maximum = arrayOfNumbers[0],maximumIndex = 0;
     /* creating for loop to check for every element in the array two things:
         - if the current element is greater than maximum so you should put it in maximum
         - if the current element is smaller than minimum so you should put it in minmium
@@ -18,11 +18,13 @@ int main(){
     for(int i = 1;i < numberElements;i++){
         if(arrayOfNumbers[i] > maximum){
             maximum = arrayOfNumbers[i];
+            maximumIndex = i;
         }
         if(arrayOfNumbers[i] < minimum){
             minimum = arrayOfNumbers[i];
+            minimumIndex = i;
         }
     }
     // loging to user the values
-    cout << "Minimum Value is " << minimum << ", Maximum Value is " << maximum;
+    cout << "Minimum Value is " << minimum << " and it's index" << minimumIndex << ", Maximum Value is " << maximum << " and it's index" << maximumIndex;
 }
